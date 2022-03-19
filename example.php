@@ -1,5 +1,9 @@
 <?php
 
+ini_set("error_reporting", 0);
+error_reporting(0);
+
+require "curl_get.php";
 require "EarthquakeModel.php";
 
 $html = "";
@@ -47,6 +51,8 @@ for($i=0;$i<count($json);$i++) {
     }
     
 }
+
+file_put_contents('array.json', json_encode($json));
 
 ?>
 
